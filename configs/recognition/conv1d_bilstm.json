@@ -1,0 +1,10 @@
+{
+  "architecture": "conv1d_bilstm",
+  "framework": "tensorflow.keras",
+  "status": "proposed_unimplemented",
+  "class_count": "from_approved_registry",
+  "batch_size_candidate": 16,
+  "learning_rate_candidate": 0.001,
+  "dropout_candidate": 0.3,
+  "early_stopping_monitor": "val_loss"
+}

@@ -1,0 +1,215 @@
+{
+  "status": "expert_review_required",
+  "entries": [
+    {
+      "draft_id": "D01",
+      "english_concept": "I / me",
+      "sinhala_prompt": "මම / මට",
+      "approved_form_id": null,
+      "expert_approved": false
+    },
+    {
+      "draft_id": "D02",
+      "english_concept": "you",
+      "sinhala_prompt": "ඔබ / ඔයා",
+      "approved_form_id": null,
+      "expert_approved": false
+    },
+    {
+      "draft_id": "D03",
+      "english_concept": "mother",
+      "sinhala_prompt": "අම්මා",
+      "approved_form_id": null,
+      "expert_approved": false
+    },
+    {
+      "draft_id": "D04",
+      "english_concept": "father",
+      "sinhala_prompt": "තාත්තා",
+      "approved_form_id": null,
+      "expert_approved": false
+    },
+    {
+      "draft_id": "D05",
+      "english_concept": "child",
+      "sinhala_prompt": "දරුවා",
+      "approved_form_id": null,
+      "expert_approved": false
+    },
+    {
+      "draft_id": "D06",
+      "english_concept": "doctor",
+      "sinhala_prompt": "වෛද්‍යවරයා",
+      "approved_form_id": null,
+      "expert_approved": false
+    },
+    {
+      "draft_id": "D07",
+      "english_concept": "hospital",
+      "sinhala_prompt": "රෝහල",
+      "approved_form_id": null,
+      "expert_approved": false
+    },
+    {
+      "draft_id": "D08",
+      "english_concept": "home",
+      "sinhala_prompt": "ගෙදර",
+      "approved_form_id": null,
+      "expert_approved": false
+    },
+    {
+      "draft_id": "D09",
+      "english_concept": "school",
+      "sinhala_prompt": "පාසල",
+      "approved_form_id": null,
+      "expert_approved": false
+    },
+    {
+      "draft_id": "D10",
+      "english_concept": "water",
+      "sinhala_prompt": "වතුර",
+      "approved_form_id": null,
+      "expert_approved": false
+    },
+    {
+      "draft_id": "D11",
+      "english_concept": "food",
+      "sinhala_prompt": "ආහාර",
+      "approved_form_id": null,
+      "expert_approved": false
+    },
+    {
+      "draft_id": "D12",
+      "english_concept": "medicine",
+      "sinhala_prompt": "බෙහෙත්",
+      "approved_form_id": null,
+      "expert_approved": false
+    },
+    {
+      "draft_id": "D13",
+      "english_concept": "eat",
+      "sinhala_prompt": "කන්න",
+      "approved_form_id": null,
+      "expert_approved": false
+    },
+    {
+      "draft_id": "D14",
+      "english_concept": "drink",
+      "sinhala_prompt": "බොන්න",
+      "approved_form_id": null,
+      "expert_approved": false
+    },
+    {
+      "draft_id": "D15",
+      "english_concept": "go",
+      "sinhala_prompt": "යන්න",
+      "approved_form_id": null,
+      "expert_approved": false
+    },
+    {
+      "draft_id": "D16",
+      "english_concept": "come",
+      "sinhala_prompt": "එන්න",
+      "approved_form_id": null,
+      "expert_approved": false
+    },
+    {
+      "draft_id": "D17",
+      "english_concept": "want / need",
+      "sinhala_prompt": "අවශ්‍යයි / ඕනෑ",
+      "approved_form_id": null,
+      "expert_approved": false
+    },
+    {
+      "draft_id": "D18",
+      "english_concept": "pain / hurt",
+      "sinhala_prompt": "වේදනාව / රිදෙනවා",
+      "approved_form_id": null,
+      "expert_approved": false
+    },
+    {
+      "draft_id": "D19",
+      "english_concept": "today",
+      "sinhala_prompt": "අද",
+      "approved_form_id": null,
+      "expert_approved": false
+    },
+    {
+      "draft_id": "D20",
+      "english_concept": "tomorrow",
+      "sinhala_prompt": "හෙට",
+      "approved_form_id": null,
+      "expert_approved": false
+    },
+    {
+      "draft_id": "D21",
+      "english_concept": null,
+      "purpose": "expert_selected_confusable_form",
+      "approved_form_id": null,
+      "expert_approved": false
+    },
+    {
+      "draft_id": "D22",
+      "english_concept": null,
+      "purpose": "expert_selected_confusable_form",
+      "approved_form_id": null,
+      "expert_approved": false
+    },
+    {
+      "draft_id": "D23",
+      "english_concept": null,
+      "purpose": "expert_selected_confusable_form",
+      "approved_form_id": null,
+      "expert_approved": false
+    },
+    {
+      "draft_id": "D24",
+      "english_concept": null,
+      "purpose": "expert_selected_confusable_form",
+      "approved_form_id": null,
+      "expert_approved": false
+    },
+    {
+      "draft_id": "D25",
+      "english_concept": null,
+      "purpose": "expert_selected_confusable_form",
+      "approved_form_id": null,
+      "expert_approved": false
+    },
+    {
+      "draft_id": "D26",
+      "english_concept": null,
+      "purpose": "expert_selected_confusable_form",
+      "approved_form_id": null,
+      "expert_approved": false
+    },
+    {
+      "draft_id": "D27",
+      "english_concept": null,
+      "purpose": "expert_selected_confusable_form",
+      "approved_form_id": null,
+      "expert_approved": false
+    },
+    {
+      "draft_id": "D28",
+      "english_concept": null,
+      "purpose": "expert_selected_confusable_form",
+      "approved_form_id": null,
+      "expert_approved": false
+    },
+    {
+      "draft_id": "D29",
+      "english_concept": null,
+      "purpose": "expert_selected_confusable_form",
+      "approved_form_id": null,
+      "expert_approved": false
+    },
+    {
+      "draft_id": "D30",
+      "english_concept": null,
+      "purpose": "expert_selected_confusable_form",
+      "approved_form_id": null,
+      "expert_approved": false
+    }
+  ]
+}

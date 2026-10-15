@@ -1,0 +1,13 @@
+{
+  "status": "proposed",
+  "split_unit": "signer",
+  "context_split_unit_also": "context_template_id",
+  "primary_selection_split": "validation",
+  "primary_selection_metric": "post_context_meaning_accuracy",
+  "candidate_k_values": [
+    1,
+    3,
+    5
+  ],
+  "test_used_for_tuning": false
+}

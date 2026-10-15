@@ -1,0 +1,1 @@
+Raw recordings are immutable and stored outside ordinary Git. Empty directories indicate logical placement. Use access-controlled backup storage. JSON templates under metadata/ and annotations/ are drafts, not participant data. See docs/RECORDING_PLAN.md.

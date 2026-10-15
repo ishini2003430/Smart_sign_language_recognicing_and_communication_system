@@ -1,0 +1,17 @@
+{
+  "recording_id": null,
+  "context_template_id": null,
+  "previous_context_recording_ids": [],
+  "signs": [
+    {
+      "start_ms": null,
+      "end_ms": null,
+      "form_id": null,
+      "sense_id": null
+    }
+  ],
+  "sinhala_translation": null,
+  "english_translation": null,
+  "expert_reviewer_id": null,
+  "review_status": "pending"
+}

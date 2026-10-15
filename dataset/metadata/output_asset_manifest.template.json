@@ -1,0 +1,10 @@
+{
+  "asset_id": null,
+  "source_recording_id": null,
+  "form_id": null,
+  "sense_ids": [],
+  "variant_id": null,
+  "playback_permission_reference": null,
+  "use_in_training": false,
+  "split": null
+}

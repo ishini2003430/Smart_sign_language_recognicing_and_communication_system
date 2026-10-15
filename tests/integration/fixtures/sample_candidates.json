@@ -1,0 +1,22 @@
+{
+  "synthetic_example": true,
+  "schema_version": "0.1",
+  "vocabulary_version": "SYNTHETIC_ONLY",
+  "window_id": "DEMO_001",
+  "start_ms": 1000,
+  "end_ms": 3000,
+  "model_id": "lstm_demo",
+  "uncertain": true,
+  "top_k": [
+    {
+      "form_id": "FORM_A",
+      "score": 0.46
+    },
+    {
+      "form_id": "FORM_B",
+      "score": 0.39
+    }
+  ],
+  "previous_recognized_context": [],
+  "quality_flags": []
+}

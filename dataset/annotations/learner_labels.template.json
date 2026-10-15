@@ -1,0 +1,20 @@
+{
+  "recording_id": null,
+  "learner_id": null,
+  "intended_form_id": null,
+  "correct": null,
+  "error_tags": [],
+  "allowed_error_tags": [
+    "handshape",
+    "location",
+    "movement",
+    "orientation",
+    "non_manual",
+    "multiple",
+    "uncertain"
+  ],
+  "staged_error": false,
+  "valid_variant": null,
+  "reviewer_id": null,
+  "notes": null
+}

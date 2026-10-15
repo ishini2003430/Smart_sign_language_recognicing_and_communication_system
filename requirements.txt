@@ -1,0 +1,8 @@
+# Proposed dependencies; resolve and freeze tested versions after smoke testing.
+tensorflow
+mediapipe
+numpy
+opencv-python
+scikit-learn
+matplotlib
+PyYAML

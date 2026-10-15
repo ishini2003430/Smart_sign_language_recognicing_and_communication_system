@@ -1,0 +1,11 @@
+{
+  "status": "proposal_not_frozen",
+  "feature_schema_version": "0.1",
+  "include_both_hands": true,
+  "include_body_relative_pose": true,
+  "face_features": "choose_after_expert_contrast_review",
+  "candidate_resampled_frames": 48,
+  "store_timestamps": true,
+  "store_missingness": true,
+  "horizontal_flip": false
+}

@@ -1,0 +1,10 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+[project]
+name = "smart-slsl-system"
+version = "0.0.1"
+description = "SLSL research skeleton; implementation pending"
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["src*", "backend*"]

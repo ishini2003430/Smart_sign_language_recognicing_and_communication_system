@@ -1,0 +1,21 @@
+{
+  "recording_id": null,
+  "parent_recording_id": null,
+  "relative_path": null,
+  "signer_id": null,
+  "session_id": null,
+  "take": null,
+  "recording_type": null,
+  "form_id": null,
+  "device_id": null,
+  "fps": null,
+  "width": null,
+  "height": null,
+  "duration_ms": null,
+  "mirrored": null,
+  "lighting": null,
+  "background": null,
+  "angle": null,
+  "consent_reference_id": null,
+  "review_status": "pending"
+}
