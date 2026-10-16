@@ -8,7 +8,7 @@ from mediapipe.tasks.python import vision
 
 
 # Project folder: the folder containing this Python file.
-ROOT = Path(__file__).resolve().parent
+ROOT = Path(__file__).resolve().parents[1]
 
 # Change this filename to "S08_friend.mp4" to preview friend.
 VIDEO = (
@@ -17,7 +17,7 @@ VIDEO = (
     / "raw"
     / "expert_reference"
     / "expert_01"
-    / "S11_brother.mp4"
+    / "S12_home.mp4"
 )
 
 MODEL = ROOT / "models" / "mediapipe" / "hand_landmarker.task"
