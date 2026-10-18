@@ -1,0 +1,5 @@
+# Keras 3 with TensorFlow backend. Compatible with recent CPython 3.10-3.13
+# on Windows x64 when a matching TensorFlow wheel is available.
+tensorflow>=2.20,<2.22
+scikit-learn>=1.4
+numpy>=1.26,<3
