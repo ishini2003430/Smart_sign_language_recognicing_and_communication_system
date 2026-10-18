@@ -1,0 +1,3 @@
+video_path,sign_id,label,signer_id,start_frame,end_frame_exclusive,start_ms,end_ms,annotation_status,notes
+dataset/raw/expert_reference/expert_01/S01_amma.mp4,S01,amma,expert_01,61,165,2036,5508,needs_expert_review,manual pilot annotation; verify with SLSL expert
+dataset/raw/expert_reference/expert_01/S12_home.mp4,S12,home,expert_01,39,124,1312,4171,needs_expert_review,manual pilot annotation; verify with SLSL expert
