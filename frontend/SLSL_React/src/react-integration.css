@@ -1,0 +1,12 @@
+/* Small additions only. Original SLSL visual styles remain in public/styles. */
+.recognition-upload-panel{padding:12px 4px 4px}
+.rec-upload-row{display:flex;align-items:flex-end;gap:12px;flex-wrap:wrap;margin-bottom:12px}
+.rec-upload-label,.rec-model-label{display:flex;flex-direction:column;gap:7px;font-size:12px;font-weight:650;color:var(--ink)}
+.rec-upload-label{flex:2;min-width:180px}.rec-model-label{flex:1;min-width:150px}
+.rec-upload-label input,.rec-model-label select{max-width:100%;background:var(--card);color:var(--ink);border:1px solid var(--line);border-radius:9px;padding:9px;font:inherit}
+.rec-api-status{font-size:12px;line-height:1.5;color:var(--text-secondary,var(--muted));margin-top:10px;overflow-wrap:anywhere}
+.rec-candidate-list{width:100%;padding-left:22px;display:flex;flex-direction:column;gap:8px}
+.rec-candidate-list li{display:flex;gap:10px;align-items:baseline;justify-content:space-between;font-size:13px}
+.rec-candidate-list li span{color:var(--muted)}
+.recognition-results-workspace .rec-result-hero{min-height:175px}
+@media(max-width:750px){.rec-upload-row{flex-direction:column;align-items:stretch}}
