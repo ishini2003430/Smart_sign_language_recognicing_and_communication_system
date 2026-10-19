@@ -1,0 +1,68 @@
+
+{
+  "I": {
+    "concept": "SELF",
+    "english": "I",
+    "sinhala": "මම",
+    "category": "PRONOUN",
+    "grammar_role": "SUBJECT"
+  },
+  "YOU": {
+    "concept": "YOU",
+    "english": "you",
+    "sinhala": "ඔයා",
+    "category": "PRONOUN",
+    "grammar_role": "SUBJECT"
+  },
+  "SCHOOL": {
+    "concept": "SCHOOL",
+    "english": "school",
+    "sinhala": "පාසල",
+    "category": "PLACE",
+    "grammar_role": "LOCATION"
+  },
+  "GO": {
+    "concept": "GO",
+    "english": "go",
+    "sinhala": "යනවා",
+    "category": "ACTION",
+    "grammar_role": "ACTION"
+  },
+  "EAT": {
+  "concept": "EAT",
+  "english": "eat",
+  "sinhala": "කනවා",
+  "category": "ACTION",
+  "grammar_role": "ACTION",
+  "allowed_objects": ["FOOD"]
+},
+  "WATER": {
+    "concept": "WATER",
+    "english": "water",
+    "sinhala": "වතුර",
+    "category": "OBJECT",
+    "grammar_role": "OBJECT"
+  },
+  "FOOD": {
+    "concept": "FOOD",
+    "english": "food",
+    "sinhala": "ආහාර",
+    "category": "OBJECT",
+    "grammar_role": "OBJECT"
+  },
+  "HOME": {
+    "concept": "HOME",
+    "english": "home",
+    "sinhala": "ගෙදර",
+    "category": "PLACE",
+    "grammar_role": "LOCATION"
+  },
+  "DRINK": {
+  "concept": "DRINK",
+  "english": "drink",
+  "sinhala": "බොනවා",
+  "category": "ACTION",
+  "grammar_role": "ACTION",
+  "allowed_objects": ["WATER"]
+}
+}
