@@ -17,6 +17,66 @@ def reconstruct_sentence(signs, lexicon):
 
     signs = [sign.strip().upper() for sign in signs]
 
+        # Handle a four-gloss sentence with an explicit time expression.
+    if len(signs) == 4:
+        time_gloss = signs[-1]
+
+        time_forms = {
+            "FRIDAY": {
+                "english": "on Friday",
+                "sinhala": "සිකුරාදා"
+            },
+            "FEBRUARY": {
+                "english": "in February",
+                "sinhala": "පෙබරවාරි මාසයේ"
+            }
+        }
+
+        if time_gloss not in time_forms:
+            return unknown_result()
+
+        # Reuse the existing three-word grammar engine.
+        base_result = reconstruct_sentence(signs[:3], lexicon)
+
+        if base_result["pattern"] != "SUBJECT_LOCATION_ACTION":
+            return unknown_result()
+
+        english_base = base_result["english"].rstrip(".")
+        time_phrase = time_forms[time_gloss]
+
+        # Place the time expression after the location in English.
+        english = (
+            f"{english_base} {time_phrase['english']}."
+        )
+
+        # In this prototype, place the time expression
+        # after the subject in the Sinhala sentence.
+        if signs[0] == "I":
+            sinhala_subject = "මම"
+        elif signs[0] == "YOU":
+            sinhala_subject = "ඔයා"
+        else:
+            return unknown_result()
+
+        sinhala_base = base_result["sinhala"].rstrip(".")
+        subject_prefix = sinhala_subject + " "
+
+        if not sinhala_base.startswith(subject_prefix):
+            return unknown_result()
+
+        remainder = sinhala_base[len(subject_prefix):]
+
+        sinhala = (
+            f"{sinhala_subject} "
+            f"{time_phrase['sinhala']} {remainder}."
+        )
+
+        return {
+            "english": english,
+            "sinhala": sinhala,
+            "pattern": "SUBJECT_LOCATION_ACTION_TIME"
+        }
+
     if len(signs) != 3:
         return unknown_result()
 
