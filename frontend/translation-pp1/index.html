@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Translation — SLSL</title>
+  <link rel="stylesheet" href="/assets/theme.css">
+  <link rel="stylesheet" href="/assets/translation.css">
+  <script src="/assets/translation.js" defer></script>
+</head>
+<body>
+<header class="top-nav">
+  <div class="brand"><div class="brand-icon">🤟</div><div><strong>SLSL</strong><small>Smart Communication</small></div></div>
+  <nav class="nav-links" aria-label="Project navigation"><span>Dashboard</span><span>Recognition</span><span class="active">Translation</span><span>Learn SLSL</span><span>Communication</span><span>Signs</span><span>History</span><span>Progress</span></nav>
+  <button class="secondary-btn theme-toggle" id="themeToggle" type="button">🌙 Dark mode</button>
+</header>
+<main class="user-main">
+  <section class="page-head">
+    <div><div class="kicker">SLSL TRANSLATION</div><h1>Translate Signs → Sinhala &amp; English</h1><p>Enter sign glosses or simulated recognition candidates. Your Python engine generates the results.</p></div>
+    <div class="ready-chip">● Translation engine ready</div>
+  </section>
+  <section class="translation-layout">
+    <article class="card">
+      <div class="titlebar"><div><div class="hud-label">RECOGNIZED SIGNS</div><h2>Your SLSL Sign Sequence</h2></div><span class="small-badge">SIGN STREAM</span></div>
+      <fieldset class="mode-switch"><legend>Input method</legend><label><input type="radio" name="mode" value="direct" checked> Normal sign sequence</label><label><input type="radio" name="mode" value="topk"> Similar signs (Top-K)</label></fieldset>
+      <div id="directPanel"><label class="field-label" for="glossInput">Enter glosses (separated by commas)</label><input id="glossInput" class="text-input" value="I, SCHOOL, GO, FRIDAY" autocomplete="off" spellcheck="false"><div class="hint">Example: YOU, WATER, DRINK</div></div>
+      <div id="topkPanel" hidden><label class="field-label" for="topkInput">Simulated Top-K sequence (JSON)</label><textarea id="topkInput" class="text-input code-input" rows="12" spellcheck="false"></textarea><div class="presets"><button class="preset-btn" id="presetPronoun" type="button">I / ME example</button><button class="preset-btn" id="presetFriend" type="button">FRIEND / FRIDAY example</button></div><div class="hint">Each sequence position has a <code>top_k</code> array. Include one candidate for unambiguous signs.</div></div>
+      <div class="field-label preview-title">Input sequence preview</div><div id="translationSequence" class="sequence-editor" aria-live="polite"></div>
+      <div class="telemetry"><div><span>INPUT</span><strong id="inputStatus">SLSL Signs</strong><div class="bar"><i></i></div></div><div><span>STATUS</span><strong id="processingStatus">Ready</strong><div class="bar"><i></i></div></div><div><span>SENTENCE</span><strong id="sentenceStatus">Awaiting input</strong><div class="bar"><i></i></div></div></div>
+      <div class="controls"><button id="translateBtn" class="primary-btn" type="button">文 Generate Translation</button><button id="clearTranslation" class="secondary-btn" type="button">Clear</button></div>
+      <p class="hint foot-hint">ℹ Supports defined grammar patterns; unrecognized or ambiguous input is reported instead of guessed.</p>
+    </article>
+    <article class="card">
+      <div class="titlebar"><div><div class="hud-label">TRANSLATION RESULT</div><h2>Sinhala &amp; English</h2></div><span id="translationState" class="state-badge">READY</span></div>
+      <div id="translationPlaceholder" class="translation-waiting"><span class="placeholder-icon">文</span><strong>Ready to Translate</strong><p>Click “Generate Translation” to run your Python bilingual translation engine.</p></div>
+      <div id="translationError" class="error-panel" hidden role="alert"></div>
+      <div id="translationResults" hidden>
+        <div class="result-language"><span class="result-label">SINHALA TRANSLATION</span><p id="trSinhala" lang="si"></p><button id="trSpeakSinhala" class="secondary-btn" type="button">🔊 Play Sinhala Voice</button></div>
+        <div class="result-language"><span class="result-label">ENGLISH TRANSLATION</span><p id="trEnglish" lang="en"></p><button id="trSpeakEnglish" class="secondary-btn" type="button">🔊 Play English Voice</button></div>
+        <div class="result-meta"><span>Grammar pattern</span><strong id="trPattern"></strong></div>
+        <section id="contextResults" hidden><h3>Contextual selection analysis</h3><p class="hint">Recognition-only choices are compared with context-aware selections.</p><div id="decisionList"></div></section>
+        <div class="audio-console"><div class="hud-label">VOICE SYNTHESIS</div><p id="voiceStatus">Playback uses your browser's available voices.</p><div class="wave" aria-hidden="true">▂ ▅ ▃ ▆ ▂ ▄ ▇ ▃ ▅ ▂ ▆ ▄ ▃ ▅ ▂</div></div>
+      </div>
+    </article>
+  </section>
+  <section class="flow-strip"><div><span>⌨️</span><strong>Enter Signs</strong><small>Manual PP1 input</small></div><div><span>🧩</span><strong>Analyze Context</strong><small>Top-K where needed</small></div><div><span>文</span><strong>Translate</strong><small>Sinhala &amp; English</small></div><div><span>✓</span><strong>Grammar Rules</strong><small>Supported patterns</small></div><div><span>🔊</span><strong>Voice Output</strong><small>Browser voice support</small></div></section>
+  <p class="research-note">PP1 standalone research prototype. Recognition scores are manually simulated; contextual rules and sign order require SLSL expert validation. Camera recognition is not connected.</p>
+</main>
+</body>
+</html>
