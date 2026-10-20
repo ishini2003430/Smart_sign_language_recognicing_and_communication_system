@@ -23,3 +23,5 @@ dataset/raw/**
 models/**
 !models/**/
 !models/**/.gitkeep
+# Generated landmark extraction outputs
+dataset/processed/landmarks/pilot_hands_v*/

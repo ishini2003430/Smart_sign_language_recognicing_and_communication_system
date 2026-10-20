@@ -1,0 +1,187 @@
+{
+  "settings": {
+    "component": "SettingsPage",
+    "styles": [
+      "user-ui.css",
+      "hud-theme.css",
+      "theme.css"
+    ],
+    "research": false,
+    "auth": false,
+    "title": "Settings \u2014 SLSL"
+  },
+  "research-dashboard": {
+    "component": "ResearchDashboardPage",
+    "styles": [
+      "research-ui.css",
+      "hud-research.css",
+      "theme.css"
+    ],
+    "research": true,
+    "auth": false,
+    "title": "Research Dashboard \u2014 SLSL"
+  },
+  "progress": {
+    "component": "ProgressPage",
+    "styles": [
+      "user-ui.css",
+      "hud-theme.css",
+      "theme.css"
+    ],
+    "research": false,
+    "auth": false,
+    "title": "My Progress \u2014 SLSL"
+  },
+  "history": {
+    "component": "HistoryPage",
+    "styles": [
+      "user-ui.css",
+      "hud-theme.css",
+      "theme.css"
+    ],
+    "research": false,
+    "auth": false,
+    "title": "History \u2014 SLSL"
+  },
+  "signup": {
+    "component": "SignupPage",
+    "styles": [
+      "auth.css",
+      "theme.css"
+    ],
+    "research": false,
+    "auth": true,
+    "title": "Create Account \u2014 SLSL"
+  },
+  "dataset": {
+    "component": "DatasetPage",
+    "styles": [
+      "research-ui.css",
+      "hud-research.css",
+      "theme.css"
+    ],
+    "research": true,
+    "auth": false,
+    "title": "Dataset Management \u2014 SLSL"
+  },
+  "error-analysis": {
+    "component": "ErrorAnalysisPage",
+    "styles": [
+      "user-ui.css",
+      "hud-theme.css",
+      "theme.css"
+    ],
+    "research": true,
+    "auth": false,
+    "title": "Practice Feedback \u2014 SLSL"
+  },
+  "research-evaluation": {
+    "component": "ResearchEvaluationPage",
+    "styles": [
+      "research-ui.css",
+      "hud-research.css",
+      "theme.css"
+    ],
+    "research": true,
+    "auth": false,
+    "title": "Research Evaluation \u2014 SLSL"
+  },
+  "recognition-analysis": {
+    "component": "RecognitionAnalysisPage",
+    "styles": [
+      "research-ui.css",
+      "hud-research.css",
+      "theme.css"
+    ],
+    "research": false,
+    "auth": false,
+    "title": "Recognition Analysis \u2014 SLSL"
+  },
+  "recognition": {
+    "component": "RecognitionPage",
+    "styles": [
+      "user-ui.css",
+      "hud-theme.css",
+      "theme.css"
+    ],
+    "research": false,
+    "auth": false,
+    "title": "SLSL Recognition"
+  },
+  "library": {
+    "component": "LibraryPage",
+    "styles": [
+      "user-ui.css",
+      "hud-theme.css",
+      "theme.css"
+    ],
+    "research": false,
+    "auth": false,
+    "title": "SLSL Sign Animation"
+  },
+  "index": {
+    "component": "IndexPage",
+    "styles": [
+      "auth.css",
+      "theme.css"
+    ],
+    "research": false,
+    "auth": true,
+    "title": "Login \u2014 SLSL"
+  },
+  "translation": {
+    "component": "TranslationPage",
+    "styles": [
+      "user-ui.css",
+      "hud-theme.css",
+      "theme.css"
+    ],
+    "research": false,
+    "auth": false,
+    "title": "Translation \u2014 SLSL"
+  },
+  "communication": {
+    "component": "CommunicationPage",
+    "styles": [
+      "user-ui.css",
+      "hud-theme.css",
+      "theme.css"
+    ],
+    "research": false,
+    "auth": false,
+    "title": "Live Communication \u2014 SLSL"
+  },
+  "profile": {
+    "component": "ProfilePage",
+    "styles": [
+      "user-ui.css",
+      "hud-theme.css",
+      "theme.css"
+    ],
+    "research": false,
+    "auth": false,
+    "title": "Profile \u2014 SLSL"
+  },
+  "dashboard": {
+    "component": "DashboardPage",
+    "styles": [
+      "user-ui.css",
+      "hud-theme.css",
+      "theme.css"
+    ],
+    "research": false,
+    "auth": false,
+    "title": "Dashboard \u2014 SLSL"
+  },
+  "learn": {
+    "component": "LearnPage",
+    "styles": [
+      "user-ui.css",
+      "hud-theme.css",
+      "theme.css"
+    ],
+    "research": false,
+    "auth": false,
+    "title": "Learn SLSL \u2014 Sign Practice"
+  }
+}

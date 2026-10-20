@@ -1,0 +1,61 @@
+/* =========================================================
+   SLSL RESEARCH CONSOLE - COMPONENT REFINEMENTS
+   Loaded AFTER research-ui.css.
+========================================================= */
+
+/* Ensure main content is clean light background */
+.research-main {
+  background: var(--bg);
+}
+
+.research-table-card {
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--card);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+}
+
+.data-table th {
+  background: var(--surface-secondary);
+  color: var(--text-secondary);
+  font-weight: 600;
+  border-bottom: 1px solid var(--line);
+}
+
+.data-table td {
+  border-bottom: 1px solid var(--line);
+  color: var(--ink);
+}
+
+.data-table tr:hover td {
+  background: var(--hover);
+}
+
+.note {
+  margin: 10px 0 0;
+  color: var(--text-secondary);
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.section-heading {
+  margin-bottom: 12px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.section-heading h2 {
+  margin: 0;
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.section-heading p {
+  margin: 2px 0 0;
+  color: var(--text-secondary);
+  font-size: 12px;
+}

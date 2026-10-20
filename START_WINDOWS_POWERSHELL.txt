@@ -1,0 +1,24 @@
+SLSL recognition: 3-model starter (Windows PowerShell)
+===================================================
+1. First extract ZIP OUTSIDE your repository, and copy only src/, scripts/,
+   tests/ files into your existing repository. Check changed files before overwrite.
+   DO NOT copy dataset/ or outputs/ from someone else's machine.
+
+2. Run these commands from your repository root in VS Code Terminal:
+
+.\.venv\Scripts\python.exe --version
+.\.venv\Scripts\python.exe -m pip install "tensorflow>=2.20,<2.22" "scikit-learn>=1.4" "numpy>=1.26,<3"
+.\.venv\Scripts\python.exe -c "import keras; print('Keras', keras.__version__, 'backend', keras.backend.backend())"
+.\.venv\Scripts\python.exe scripts\check_landmarks.py --allow-unreviewed
+.\.venv\Scripts\python.exe scripts\train_recognizer.py --mode pilot --model all --epochs 5 --allow-unreviewed
+.\.venv\Scripts\python.exe scripts\evaluate_recognizers.py --mode pilot
+
+3. To test Top-k handoff to Mendis AFTER models train:
+
+.\.venv\Scripts\python.exe scripts\predict_topk.py --mode pilot --model gru --sequence-id DEMO001 --segments "dataset/processed/landmarks/pilot_hands_v1/expert_01/S04_go.npz" "dataset/processed/landmarks/pilot_hands_v1/expert_01/S07_school.npz"
+
+NOTE: Existing 22 landmark NPZ files should ALREADY be at
+ dataset/processed/landmarks/pilot_hands_v1/expert_01 or expert_02.
+Only 10 common sign classes participate in pilot.
+Scores ARE NOT research-ready accuracy. Label status NEEDS_REVIEW.
+Do not use duplicated/copied takes in the dataset.
