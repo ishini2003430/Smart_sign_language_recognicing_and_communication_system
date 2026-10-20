@@ -71,6 +71,17 @@ def infer_expected_role(sequence, ambiguous_position, lexicon):
     ):
         return "MONTH"
 
+            # A person is expected as the object of SEE.
+    # Prototype English grammar constraint.
+    if (
+        len(glosses) == 3
+        and ambiguous_position == 2
+        and glosses[0] in lexicon
+        and glosses[1] == "SEE"
+        and lexicon[glosses[0]].get("grammar_role") == "SUBJECT"
+    ):
+        return "PERSON"
+
     return None
 
 
@@ -128,6 +139,13 @@ def select_candidate(sequence, ambiguous_position):
                 reasons.append(
                     "Candidate conflicts with the expected "
                     "English subject role."
+                )
+        elif expected_role == "PERSON":
+            if entry.get("category") == "PERSON":
+                context_score = 2
+                reasons.append(
+                    "Candidate represents a person and fits "
+                    "the object position of SEE."
                 )
 
         elif expected_role == "MONTH":

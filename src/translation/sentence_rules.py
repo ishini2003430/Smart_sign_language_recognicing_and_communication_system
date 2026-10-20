@@ -119,6 +119,48 @@ def reconstruct_sentence(signs, lexicon):
             ),
             "pattern": "SUBJECT_OBJECT_ACTION"
         }
+        
+    # Pattern: Subject + SEE + Person
+    # Supports both:
+    # I + SEE + FRIEND
+    # I + FRIEND + SEE
+
+    if (
+        middle_role == "PERSON"
+        and action_gloss == "SEE"
+    ):
+        allowed_objects = action.get("allowed_objects", [])
+
+        if middle.get("concept") not in allowed_objects:
+            return unknown_result()
+
+        english_person = middle["english"]
+        sinhala_person = middle["sinhala"]
+
+        # Explicitly supported Sinhala object forms
+        sinhala_object_forms = {
+            "FRIEND": "මිතුරාව"
+        }
+
+        sinhala_object = sinhala_object_forms.get(
+            middle_gloss
+        )
+
+        if sinhala_object is None:
+            return unknown_result()
+
+        return {
+            "english": (
+                f"{english_subject} see a "
+                f"{english_person}."
+            ),
+            "sinhala": (
+                f"{sinhala_subject} "
+                f"{sinhala_object} දකිනවා."
+            ),
+            "pattern": "SUBJECT_PERSON_ACTION"
+        }
+
 
     # Pattern 3: Subject + Object + WANT
 

@@ -124,6 +124,14 @@
     "sinhala": "එනවා",
     "category": "ACTION",
     "grammar_role": "ACTION"
+  },
+  "SEE": {
+    "concept": "SEE",
+    "english": "see",
+    "sinhala": "දකිනවා",
+    "category": "ACTION",
+    "grammar_role": "ACTION",
+    "allowed_objects": ["FRIEND"]
   }
 
 }
