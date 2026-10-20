@@ -124,26 +124,53 @@ def evaluate_full_sequences(sequence):
     ):
         candidates = candidate_lists[index]
 
-        baseline = max(
+        baseline_candidate = max(
             candidates,
             key=lambda item: item["score"]
-        )["gloss"]
+        )
+
+        baseline = baseline_candidate["gloss"]
+
+        chosen_candidate = next(
+            item
+            for item in candidates
+            if item["gloss"] == chosen_gloss
+        )
+
+        overridden = chosen_gloss != baseline
+
+        if len(candidates) == 1:
+            status = "SINGLE_CANDIDATE"
+            reason = "Only one candidate was provided."
+
+        elif overridden:
+            status = "RESOLVED"
+            reason = (
+                "The recognition-only choice was overridden. "
+                "The selected word belongs to the only "
+                "candidate sequence supported by the "
+                "current grammar engine."
+            )
+
+        else:
+            status = "RESOLVED"
+            reason = (
+                "The highest-scoring recognition candidate "
+                "also belongs to the only grammatically "
+                "supported sequence."
+            )
 
         decisions.append({
             "position": index,
-            "status": (
-                "RESOLVED"
-                if len(candidates) > 1
-                else "SINGLE_CANDIDATE"
-            ),
+            "status": status,
             "selected": chosen_gloss,
+            "selected_recognition_score": chosen_candidate["score"],
             "recognition_baseline": baseline,
-            "reason": (
-                "The selected candidate belongs to the "
-                "only sequence supported by the current "
-                "grammar engine."
-            )
+            "baseline_score": baseline_candidate["score"],
+            "context_overrode_recognition": overridden,
+            "reason": reason
         })
+
 
     translation = winner["translation"]
 
