@@ -1,0 +1,4 @@
+sign,learner_file,category,valid_expert_count,mean_dtw_distance,experimental_error_score_percent,score_status
+S06,dataset\processed\features\learner_02\S06_welcome_learner_02_attempt01_20261020_110100.npy,Hand shape,4,5.405614,99.55,EXPERIMENTAL_NOT_VALIDATED
+S06,dataset\processed\features\learner_02\S06_welcome_learner_02_attempt01_20261020_110100.npy,Hand position,4,0.617077,46.05,EXPERIMENTAL_NOT_VALIDATED
+S06,dataset\processed\features\learner_02\S06_welcome_learner_02_attempt01_20261020_110100.npy,Hand movement,4,0.183331,16.75,EXPERIMENTAL_NOT_VALIDATED

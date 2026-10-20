@@ -1,0 +1,5 @@
+expert,expert_file,shape_distance,position_distance,movement_distance,learner_frames,expert_frames
+expert_01,dataset\processed\features\expert_01\S06_welcome.npy,4.898390291498928,0.4704227252055982,0.0721688370349664,43,138
+expert_02,dataset\processed\features\expert_02\S06_welcome.npy,5.326092284264788,0.6502631449074191,0.16879363102478767,43,72
+expert_03,dataset\processed\features\expert_03\S06_welcome.npy,1.6987302819298105,0.3314308234293157,0.14583060185618096,43,37
+expert_04,dataset\processed\features\expert_04\S06_welcome.npy,9.699243822931345,1.0161899940229686,0.3465325590096826,43,52
