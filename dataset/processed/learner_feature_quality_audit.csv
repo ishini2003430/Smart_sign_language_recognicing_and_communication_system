@@ -1,0 +1,9 @@
+file,frames,finite,left_landmark_presence_pct,left_frames_with_hand_pct,right_landmark_presence_pct,right_frames_with_hand_pct,pose_landmark_presence_pct
+S02_father_learner_01_attempt01_20261019_233302.npy,42,True,0.0,0.0,45.24,45.24,100.0
+S02_father_learner_01_attempt01_20261019_233437.npy,36,True,0.0,0.0,58.33,58.33,100.0
+S02_father_learner_01_attempt01_20261019_235609.npy,56,True,1.79,1.79,33.93,33.93,100.0
+S02_father_learner_01_attempt01_20261019_235706.npy,48,True,0.0,0.0,35.42,35.42,100.0
+S02_father_learner_01_attempt01_20261020_085907.npy,60,True,0.0,0.0,43.33,43.33,100.0
+S02_father_learner_01_attempt02_20261019_233333.npy,46,True,0.0,0.0,0.0,0.0,100.0
+S02_father_learner_01_attempt03_20261019_233344.npy,53,True,0.0,0.0,22.64,22.64,100.0
+S05_come_learner_01_attempt01_20261019_235822.npy,34,True,0.0,0.0,29.41,29.41,100.0

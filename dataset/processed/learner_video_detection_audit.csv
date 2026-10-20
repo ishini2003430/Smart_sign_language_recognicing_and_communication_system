@@ -1,0 +1,9 @@
+video,video_frames,frames_with_any_hand,any_hand_detection_pct,frames_with_left_label,frames_with_right_label,frames_with_unknown_label,feature_frames,frame_count_match
+S02_father_learner_01_attempt01_20261019_233302.mp4,42,19,45.24,0,19,0,42,True
+S02_father_learner_01_attempt01_20261019_233437.mp4,36,22,61.11,1,21,0,36,True
+S02_father_learner_01_attempt01_20261019_235609.mp4,56,20,35.71,1,19,0,56,True
+S02_father_learner_01_attempt01_20261019_235706.mp4,48,17,35.42,0,17,0,48,True
+S02_father_learner_01_attempt01_20261020_085907.mp4,60,26,43.33,0,26,0,60,True
+S02_father_learner_01_attempt02_20261019_233333.mp4,46,0,0.0,0,0,0,46,True
+S02_father_learner_01_attempt03_20261019_233344.mp4,53,12,22.64,0,12,0,53,True
+S05_come_learner_01_attempt01_20261019_235822.mp4,34,10,29.41,0,10,0,34,True

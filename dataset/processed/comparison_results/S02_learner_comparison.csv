@@ -1,0 +1,4 @@
+expert,expert_frames,learner_frames,dtw_total_distance,dtw_mean_path_distance,alignment_path_length
+expert_02,72,42,410.93820040084677,5.707475005567316,72
+expert_03,45,42,262.160034238879,5.825778538641756,45
+expert_01,138,42,998.2943526596852,7.234017048258588,138

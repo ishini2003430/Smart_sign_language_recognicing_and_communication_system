@@ -1,0 +1,259 @@
+{
+  "purpose": "DTW expert reference sequences for C3",
+  "training_experts": [
+    "expert_01",
+    "expert_02",
+    "expert_03"
+  ],
+  "excluded_test_expert": "expert_04",
+  "feature_count": 225,
+  "method": "Preserve individual variable-length expert sequences; no frame averaging",
+  "profiles": {
+    "S01": {
+      "file": "S01.npz",
+      "experts_included": [
+        "expert_01",
+        "expert_03"
+      ],
+      "sequence_count": 2
+    },
+    "S02": {
+      "file": "S02.npz",
+      "experts_included": [
+        "expert_01",
+        "expert_02",
+        "expert_03"
+      ],
+      "sequence_count": 3
+    },
+    "S03": {
+      "file": "S03.npz",
+      "experts_included": [
+        "expert_01",
+        "expert_02",
+        "expert_03"
+      ],
+      "sequence_count": 3
+    },
+    "S04": {
+      "file": "S04.npz",
+      "experts_included": [
+        "expert_01",
+        "expert_02",
+        "expert_03"
+      ],
+      "sequence_count": 3
+    },
+    "S05": {
+      "file": "S05.npz",
+      "experts_included": [
+        "expert_01",
+        "expert_02",
+        "expert_03"
+      ],
+      "sequence_count": 3
+    },
+    "S06": {
+      "file": "S06.npz",
+      "experts_included": [
+        "expert_01",
+        "expert_02",
+        "expert_03"
+      ],
+      "sequence_count": 3
+    },
+    "S07": {
+      "file": "S07.npz",
+      "experts_included": [
+        "expert_01",
+        "expert_02",
+        "expert_03"
+      ],
+      "sequence_count": 3
+    },
+    "S08": {
+      "file": "S08.npz",
+      "experts_included": [
+        "expert_01",
+        "expert_02",
+        "expert_03"
+      ],
+      "sequence_count": 3
+    },
+    "S09": {
+      "file": "S09.npz",
+      "experts_included": [
+        "expert_01",
+        "expert_02",
+        "expert_03"
+      ],
+      "sequence_count": 3
+    },
+    "S10": {
+      "file": "S10.npz",
+      "experts_included": [
+        "expert_01",
+        "expert_02",
+        "expert_03"
+      ],
+      "sequence_count": 3
+    },
+    "S11": {
+      "file": "S11.npz",
+      "experts_included": [
+        "expert_01",
+        "expert_02",
+        "expert_03"
+      ],
+      "sequence_count": 3
+    },
+    "S12": {
+      "file": "S12.npz",
+      "experts_included": [
+        "expert_01",
+        "expert_03"
+      ],
+      "sequence_count": 2
+    },
+    "S13": {
+      "file": "S13.npz",
+      "experts_included": [
+        "expert_03"
+      ],
+      "sequence_count": 1
+    },
+    "S14": {
+      "file": "S14.npz",
+      "experts_included": [
+        "expert_03"
+      ],
+      "sequence_count": 1
+    },
+    "S15": {
+      "file": "S15.npz",
+      "experts_included": [
+        "expert_03"
+      ],
+      "sequence_count": 1
+    },
+    "S16": {
+      "file": "S16.npz",
+      "experts_included": [
+        "expert_03"
+      ],
+      "sequence_count": 1
+    },
+    "S17": {
+      "file": "S17.npz",
+      "experts_included": [
+        "expert_03"
+      ],
+      "sequence_count": 1
+    },
+    "S18": {
+      "file": "S18.npz",
+      "experts_included": [
+        "expert_03"
+      ],
+      "sequence_count": 1
+    },
+    "S19": {
+      "file": "S19.npz",
+      "experts_included": [
+        "expert_03"
+      ],
+      "sequence_count": 1
+    },
+    "S20": {
+      "file": "S20.npz",
+      "experts_included": [
+        "expert_03"
+      ],
+      "sequence_count": 1
+    },
+    "S21": {
+      "file": "S21.npz",
+      "experts_included": [
+        "expert_03"
+      ],
+      "sequence_count": 1
+    },
+    "S22": {
+      "file": "S22.npz",
+      "experts_included": [
+        "expert_03"
+      ],
+      "sequence_count": 1
+    },
+    "S23": {
+      "file": "S23.npz",
+      "experts_included": [
+        "expert_03"
+      ],
+      "sequence_count": 1
+    },
+    "S24": {
+      "file": "S24.npz",
+      "experts_included": [
+        "expert_03"
+      ],
+      "sequence_count": 1
+    },
+    "S25": {
+      "file": "S25.npz",
+      "experts_included": [
+        "expert_03"
+      ],
+      "sequence_count": 1
+    },
+    "S26": {
+      "file": "S26.npz",
+      "experts_included": [
+        "expert_03"
+      ],
+      "sequence_count": 1
+    },
+    "S27": {
+      "file": "S27.npz",
+      "experts_included": [
+        "expert_03"
+      ],
+      "sequence_count": 1
+    },
+    "S28": {
+      "file": "S28.npz",
+      "experts_included": [
+        "expert_03"
+      ],
+      "sequence_count": 1
+    },
+    "S29": {
+      "file": "S29.npz",
+      "experts_included": [
+        "expert_03"
+      ],
+      "sequence_count": 1
+    },
+    "S30": {
+      "file": "S30.npz",
+      "experts_included": [
+        "expert_03"
+      ],
+      "sequence_count": 1
+    },
+    "S31": {
+      "file": "S31.npz",
+      "experts_included": [
+        "expert_03"
+      ],
+      "sequence_count": 1
+    },
+    "S32": {
+      "file": "S32.npz",
+      "experts_included": [
+        "expert_03"
+      ],
+      "sequence_count": 1
+    }
+  }
+}

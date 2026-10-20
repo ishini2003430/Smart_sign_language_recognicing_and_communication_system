@@ -2,6 +2,8 @@
 import csv
 import re
 import time
+import subprocess
+import sys
 from datetime import datetime
 from pathlib import Path
 
@@ -27,13 +29,11 @@ POSE_MODEL = (
 
 RAW_DIR = ROOT / "dataset" / "raw" / "learner_samples"
 FEATURE_DIR = ROOT / "dataset" / "processed" / "features"
+
 METADATA_FILE = (
     ROOT / "dataset" / "annotations" / "learner_capture_metadata.csv"
 )
 
-# 21 left-hand landmarks * 3
-# 21 right-hand landmarks * 3
-# 33 pose landmarks * 3
 FEATURE_COUNT = 225
 
 
@@ -94,7 +94,7 @@ def safe_name(value):
 
 def landmark_values(landmarks, count):
     """
-    Return x, y, z for each landmark.
+    Return x, y, z for every landmark.
     Return zeros when landmarks are unavailable.
     """
     if not landmarks:
@@ -216,6 +216,7 @@ def create_video_writer(video_path, frame):
 # ============================================================
 
 def main():
+
     # Check the model files.
     if not HAND_MODEL.exists():
         raise FileNotFoundError(
@@ -235,7 +236,10 @@ def main():
     print("\nAvailable Sign IDs:\n")
 
     for sign_code, sign_name in SIGNS.items():
-        print(f"  {sign_code} - {sign_name.replace('_', ' ').title()}")
+        print(
+            f"  {sign_code} - "
+            f"{sign_name.replace('_', ' ').title()}"
+        )
 
     # Ask for learner ID.
     while True:
@@ -249,7 +253,7 @@ def main():
         except ValueError as error:
             print(error)
 
-    # Ask for sign ID only.
+    # Ask for sign ID.
     while True:
         sign_id = input(
             "\nEnter sign ID only (example S02): "
@@ -258,7 +262,10 @@ def main():
         if sign_id in SIGNS:
             break
 
-        print("Invalid sign ID. Choose one of the displayed S01-S32 IDs.")
+        print(
+            "Invalid sign ID. "
+            "Choose one of the displayed S01-S32 IDs."
+        )
 
     sign_name = SIGNS[sign_id]
     sign_folder_name = f"{sign_id}_{sign_name}"
@@ -275,7 +282,7 @@ def main():
     learner_feature_dir.mkdir(parents=True, exist_ok=True)
     METADATA_FILE.parent.mkdir(parents=True, exist_ok=True)
 
-    # Configure MediaPipe detectors.
+    # Configure MediaPipe hand detector.
     hand_options = vision.HandLandmarkerOptions(
         base_options=python.BaseOptions(
             model_asset_path=str(HAND_MODEL)
@@ -284,6 +291,7 @@ def main():
         num_hands=2,
     )
 
+    # Configure MediaPipe pose detector.
     pose_options = vision.PoseLandmarkerOptions(
         base_options=python.BaseOptions(
             model_asset_path=str(POSE_MODEL)
@@ -291,6 +299,7 @@ def main():
         running_mode=vision.RunningMode.VIDEO,
     )
 
+    # Open webcam.
     camera = cv2.VideoCapture(0)
 
     if not camera.isOpened():
@@ -311,20 +320,18 @@ def main():
     video_path = None
     feature_path = None
 
-    # Use a consistent nominal video frame rate.
-    fps = 30.0
-
-    # Timestamps must increase for MediaPipe VIDEO mode.
+    # MediaPipe VIDEO timestamps must increase.
     start_clock = time.monotonic()
     last_timestamp_ms = -1
 
     # --------------------------------------------------------
-    # SAVE ONE ATTEMPT
+    # SAVE ONE ATTEMPT AND RUN AUTOMATIC COMPARISON
     # --------------------------------------------------------
 
     def save_attempt():
         nonlocal frame_features, recording, writer
 
+        # Release video writer before comparing.
         if writer is not None:
             writer.release()
             writer = None
@@ -334,6 +341,7 @@ def main():
             recording = False
             return
 
+        # Convert captured features into a sequence.
         sequence = np.stack(
             frame_features
         ).astype(np.float32)
@@ -364,6 +372,7 @@ def main():
             newline="",
             encoding="utf-8",
         ) as file:
+
             csv_writer = csv.DictWriter(
                 file,
                 fieldnames=fields,
@@ -394,13 +403,64 @@ def main():
         print(f"Sign:     {sign_id} - {sign_name}")
         print(f"Video:    {video_path}")
         print(f"Features: {feature_path}")
-        print(f"Shape:    {sequence.shape} (frames, features)")
+        print(
+            f"Shape:    {sequence.shape} (frames, features)"
+        )
         print(f"Metadata: {METADATA_FILE}")
         print("Label:    pending_review")
         print("----------------------------------------")
 
+        # Reset recording state before comparison.
         frame_features = []
         recording = False
+
+        # ----------------------------------------------------
+        # AUTOMATIC C3 COMPARISON
+        # ----------------------------------------------------
+
+        print("\nStarting automatic C3 comparison...")
+
+        comparison_script = (
+            ROOT / "scripts" / "compare_three_error_categories.py"
+        )
+
+        if not comparison_script.exists():
+            print(
+                "Comparison script not found:\n"
+                f"{comparison_script}"
+            )
+            return
+
+        try:
+            completed = subprocess.run(
+                [
+                    sys.executable,
+                    str(comparison_script),
+                    "--sign",
+                    sign_id,
+                    "--learner",
+                    str(feature_path),
+                ],
+                cwd=str(ROOT),
+                check=False,
+            )
+
+            if completed.returncode == 0:
+                print("\nAutomatic C3 comparison completed.")
+                print(
+                    "Check the comparison_results folder "
+                    "for the output CSV files."
+                )
+            else:
+                print(
+                    "\nAutomatic comparison failed. "
+                    "Check the error messages above."
+                )
+
+        except Exception as error:
+            print(
+                f"\nCould not run automatic C3 comparison: {error}"
+            )
 
     # --------------------------------------------------------
     # CAMERA LOOP
@@ -408,7 +468,7 @@ def main():
 
     print("\nControls:")
     print("  R       = Start recording")
-    print("  R again = Stop and save attempt")
+    print("  R again = Stop, save and compare")
     print("  Q / ESC = Save current attempt (if recording) and exit")
     print("\nKeep your hands and upper body visible.")
     print("Click the webcam window before using keyboard controls.")
@@ -427,10 +487,10 @@ def main():
                     print("Could not read a webcam frame.")
                     break
 
-                # Keyboard controls are read from the OpenCV window.
+                # Keyboard controls.
                 key = cv2.waitKey(1) & 0xFF
 
-                # Exit and save if a recording is in progress.
+                # Exit and save if recording.
                 if key in (ord("q"), ord("Q"), 27):
                     if recording:
                         save_attempt()
@@ -438,6 +498,7 @@ def main():
 
                 # Start or stop recording.
                 if key in (ord("r"), ord("R")):
+
                     if not recording:
                         attempt += 1
 
@@ -480,9 +541,11 @@ def main():
                         )
 
                     else:
+                        # Saves the attempt and automatically
+                        # runs the C3 comparison.
                         save_attempt()
 
-                # Extract and save features while recording.
+                # Extract features while recording.
                 if recording:
                     timestamp_ms = int(
                         (time.monotonic() - start_clock) * 1000
@@ -505,7 +568,7 @@ def main():
                     frame_features.append(features)
                     writer.write(frame)
 
-                # Display status.
+                # Display recording status.
                 display = frame.copy()
 
                 status = (
@@ -571,3 +634,4 @@ if __name__ == "__main__":
     except KeyboardInterrupt:
         print("\nCapture interrupted by user.")
         print("Check the output folders for saved recordings.")
+

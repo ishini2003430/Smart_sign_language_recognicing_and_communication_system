@@ -1,47 +1,151 @@
-
 [
   {
     "recording_id": "S02_father_learner_01_attempt01_20261019_233302",
     "learner_id": "learner_01",
     "intended_form_id": "S02_father",
-    "correct": null,
+    "correct": true,
     "error_tags": [],
     "staged_error": false,
     "valid_variant": null,
-    "reviewer_id": null,
-    "notes": "Needs video review"
+    "reviewer_id": "reviewer_01",
+    "notes": "Reviewed against expert reference"
   },
   {
     "recording_id": "S02_father_learner_01_attempt02_20261019_233333",
     "learner_id": "learner_01",
     "intended_form_id": "S02_father",
-    "correct": null,
+    "correct": true,
     "error_tags": [],
     "staged_error": false,
     "valid_variant": null,
-    "reviewer_id": null,
-    "notes": "Needs video review"
+    "reviewer_id": "reviewer_01",
+    "notes": "Reviewed against expert reference"
   },
   {
     "recording_id": "S02_father_learner_01_attempt03_20261019_233344",
     "learner_id": "learner_01",
     "intended_form_id": "S02_father",
-    "correct": null,
+    "correct": true,
     "error_tags": [],
     "staged_error": false,
     "valid_variant": null,
-    "reviewer_id": null,
-    "notes": "Needs video review"
+    "reviewer_id": "reviewer_01",
+    "notes": "Reviewed against expert reference"
   },
   {
     "recording_id": "S02_father_learner_01_attempt01_20261019_233437",
     "learner_id": "learner_01",
     "intended_form_id": "S02_father",
-    "correct": null,
+    "correct": true,
     "error_tags": [],
     "staged_error": false,
     "valid_variant": null,
-    "reviewer_id": null,
-    "notes": "Needs video review"
+    "reviewer_id": "reviewer_01",
+    "notes": "Reviewed against expert reference"
+  },
+  {
+    "recording_id": "S02_father_learner_01_attempt01_20261019_235609",
+    "learner_id": "learner_01",
+    "intended_form_id": "S02_father",
+    "correct": true,
+    "error_tags": [],
+    "staged_error": false,
+    "valid_variant": null,
+    "reviewer_id": "reviewer_01",
+    "notes": "Reviewed against expert reference"
+  },
+  {
+    "recording_id": "S02_father_learner_01_attempt01_20261019_235706",
+    "learner_id": "learner_01",
+    "intended_form_id": "S02_father",
+    "correct": true,
+    "error_tags": [],
+    "staged_error": false,
+    "valid_variant": null,
+    "reviewer_id": "reviewer_01",
+    "notes": "Reviewed against expert reference"
+  },
+  {
+    "recording_id": "S05_come_learner_01_attempt01_20261019_235822",
+    "learner_id": "learner_01",
+    "intended_form_id": "S05_come",
+    "correct": true,
+    "error_tags": [],
+    "staged_error": false,
+    "valid_variant": null,
+    "reviewer_id": "reviewer_01",
+    "notes": "Reviewed against expert reference"
+  },
+  {
+    "recording_id": "S02_father_learner_01_attempt01_20261020_085907",
+    "learner_id": "learner_01",
+    "intended_form_id": "S02_father",
+    "correct": false,
+    "error_tags": [
+      "hand_position"
+    ],
+    "staged_error": false,
+    "valid_variant": null,
+    "reviewer_id": "reviewer_01",
+    "notes": "Reviewed against expert reference"
+  },
+  {
+    "recording_id": "S02_father_learner_02_attempt01_20261020_093314",
+    "learner_id": "learner_02",
+    "intended_form_id": "S02_father",
+    "correct": true,
+    "error_tags": [],
+    "staged_error": false,
+    "valid_variant": null,
+    "reviewer_id": "reviewer_01",
+    "notes": "Reviewed against expert reference"
+  },
+  {
+    "recording_id": "S06_welcome_learner_02_attempt01_20261020_105349",
+    "learner_id": "learner_02",
+    "intended_form_id": "S06_welcome",
+    "correct": false,
+    "error_tags": [
+      "hand_shape"
+    ],
+    "staged_error": false,
+    "valid_variant": null,
+    "reviewer_id": "reviewer_01",
+    "notes": "Reviewed against expert reference"
+  },
+  {
+    "recording_id": "S06_welcome_learner_02_attempt01_20261020_110100",
+    "learner_id": "learner_02",
+    "intended_form_id": "S06_welcome",
+    "correct": true,
+    "error_tags": [],
+    "staged_error": false,
+    "valid_variant": null,
+    "reviewer_id": "reviewer_01",
+    "notes": "Reviewed against expert reference"
+  },
+  {
+    "recording_id": "S02_father_learner_03_attempt01_20261020_110845",
+    "learner_id": "learner_03",
+    "intended_form_id": "S02_father",
+    "correct": true,
+    "error_tags": [],
+    "staged_error": false,
+    "valid_variant": null,
+    "reviewer_id": "reviewer_01",
+    "notes": "Reviewed against expert reference"
+  },
+  {
+    "recording_id": "S02_father_learner_04_attempt01_20261020_120613",
+    "learner_id": "learner_04",
+    "intended_form_id": "S02_father",
+    "correct": false,
+    "error_tags": [
+      "hand_shape"
+    ],
+    "staged_error": false,
+    "valid_variant": null,
+    "reviewer_id": "reviewer_01",
+    "notes": "Reviewed against expert reference"
   }
 ]
