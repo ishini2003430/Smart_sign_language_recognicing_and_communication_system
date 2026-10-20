@@ -1,0 +1,255 @@
+{
+  "description": "Functional evaluation using simulated Top-K inputs and prototype reference sentences. Not a measurement of real SLSL accuracy.",
+  "created_at": "2026-10-20T20:52:13.864764",
+  "total": 7,
+  "passed": 7,
+  "results": [
+    {
+      "name": "Subject pronoun disambiguation",
+      "mode": "topk",
+      "passed": true,
+      "checks": {
+        "status": true,
+        "selected_glosses": true,
+        "english": true,
+        "sinhala": true
+      },
+      "actual_status": "SUCCESS",
+      "actual_english": "I am going to school.",
+      "actual_sinhala": "මම පාසලට යනවා.",
+      "decisions": [
+        {
+          "position": 0,
+          "status": "RESOLVED",
+          "selected": "I",
+          "recognition_baseline": "ME",
+          "ranked_candidates": [
+            {
+              "gloss": "I",
+              "recognition_score": 0.8,
+              "context_score": 2,
+              "reasons": [
+                "Candidate fits the expected subject role."
+              ]
+            },
+            {
+              "gloss": "ME",
+              "recognition_score": 0.85,
+              "context_score": -2,
+              "reasons": [
+                "Candidate conflicts with the expected English subject role."
+              ]
+            }
+          ],
+          "expected_role": "SUBJECT",
+          "reason": "Selected using contextual grammatical or semantic compatibility."
+        },
+        {
+          "position": 1,
+          "status": "SINGLE_CANDIDATE",
+          "selected": "GO",
+          "recognition_baseline": "GO",
+          "reason": "Only one candidate was provided."
+        },
+        {
+          "position": 2,
+          "status": "SINGLE_CANDIDATE",
+          "selected": "SCHOOL",
+          "recognition_baseline": "SCHOOL",
+          "reason": "Only one candidate was provided."
+        }
+      ]
+    },
+    {
+      "name": "Possessive versus subject",
+      "mode": "topk",
+      "passed": true,
+      "checks": {
+        "status": true,
+        "selected_glosses": true,
+        "english": true,
+        "sinhala": true
+      },
+      "actual_status": "SUCCESS",
+      "actual_english": "I eat food.",
+      "actual_sinhala": "මම ආහාර කනවා.",
+      "decisions": [
+        {
+          "position": 0,
+          "status": "RESOLVED",
+          "selected": "I",
+          "recognition_baseline": "MINE",
+          "ranked_candidates": [
+            {
+              "gloss": "I",
+              "recognition_score": 0.7,
+              "context_score": 2,
+              "reasons": [
+                "Candidate fits the expected subject role."
+              ]
+            },
+            {
+              "gloss": "MINE",
+              "recognition_score": 0.91,
+              "context_score": -2,
+              "reasons": [
+                "Candidate conflicts with the expected English subject role."
+              ]
+            }
+          ],
+          "expected_role": "SUBJECT",
+          "reason": "Selected using contextual grammatical or semantic compatibility."
+        },
+        {
+          "position": 1,
+          "status": "SINGLE_CANDIDATE",
+          "selected": "FOOD",
+          "recognition_baseline": "FOOD",
+          "reason": "Only one candidate was provided."
+        },
+        {
+          "position": 2,
+          "status": "SINGLE_CANDIDATE",
+          "selected": "EAT",
+          "recognition_baseline": "EAT",
+          "reason": "Only one candidate was provided."
+        }
+      ]
+    },
+    {
+      "name": "Person versus temporal meaning",
+      "mode": "topk",
+      "passed": true,
+      "checks": {
+        "status": true,
+        "selected_glosses": true,
+        "english": true,
+        "sinhala": true
+      },
+      "actual_status": "SUCCESS",
+      "actual_english": "I see a friend.",
+      "actual_sinhala": "මම මිතුරාව දකිනවා.",
+      "decisions": [
+        {
+          "position": 0,
+          "status": "SINGLE_CANDIDATE",
+          "selected": "I",
+          "recognition_baseline": "I",
+          "reason": "Only one candidate was provided."
+        },
+        {
+          "position": 1,
+          "status": "SINGLE_CANDIDATE",
+          "selected": "SEE",
+          "recognition_baseline": "SEE",
+          "reason": "Only one candidate was provided."
+        },
+        {
+          "position": 2,
+          "status": "RESOLVED",
+          "selected": "FRIEND",
+          "recognition_baseline": "FRIDAY",
+          "ranked_candidates": [
+            {
+              "gloss": "FRIEND",
+              "recognition_score": 0.75,
+              "context_score": 2,
+              "reasons": [
+                "Candidate represents a person and fits the object position of SEE."
+              ]
+            },
+            {
+              "gloss": "FRIDAY",
+              "recognition_score": 0.88,
+              "context_score": 0,
+              "reasons": []
+            },
+            {
+              "gloss": "FEBRUARY",
+              "recognition_score": 0.65,
+              "context_score": 0,
+              "reasons": []
+            }
+          ],
+          "expected_role": "PERSON",
+          "reason": "Selected using contextual grammatical or semantic compatibility."
+        }
+      ]
+    },
+    {
+      "name": "Direct object-action translation",
+      "mode": "direct",
+      "passed": true,
+      "checks": {
+        "status": true,
+        "english": true,
+        "sinhala": true
+      },
+      "actual_status": "SUCCESS",
+      "actual_english": "You drink water.",
+      "actual_sinhala": "ඔයා වතුර බොනවා.",
+      "decisions": []
+    },
+    {
+      "name": "Temporal bilingual translation",
+      "mode": "direct",
+      "passed": true,
+      "checks": {
+        "status": true,
+        "english": true,
+        "sinhala": true
+      },
+      "actual_status": "SUCCESS",
+      "actual_english": "I am going to school on Friday.",
+      "actual_sinhala": "මම සිකුරාදා පාසලට යනවා.",
+      "decisions": []
+    },
+    {
+      "name": "Insufficient context",
+      "mode": "topk",
+      "passed": true,
+      "checks": {
+        "status": true
+      },
+      "actual_status": "AMBIGUOUS",
+      "actual_english": null,
+      "actual_sinhala": null,
+      "decisions": [
+        {
+          "position": 0,
+          "status": "AMBIGUOUS",
+          "selected": null,
+          "recognition_baseline": "ME",
+          "ranked_candidates": [
+            {
+              "gloss": "ME",
+              "recognition_score": 0.85,
+              "context_score": 0,
+              "reasons": []
+            },
+            {
+              "gloss": "I",
+              "recognition_score": 0.8,
+              "context_score": 0,
+              "reasons": []
+            }
+          ],
+          "expected_role": null,
+          "reason": "Insufficient or non-unique context evidence."
+        }
+      ]
+    },
+    {
+      "name": "Unsupported sentence pattern",
+      "mode": "direct",
+      "passed": true,
+      "checks": {
+        "status": true
+      },
+      "actual_status": "UNSUPPORTED_PATTERN",
+      "actual_english": null,
+      "actual_sinhala": null,
+      "decisions": []
+    }
+  ]
+}
