@@ -1,0 +1,33 @@
+
+{
+  "groups": [
+    {
+      "group_id": "G01",
+      "form_id": "SIGN_FORM_G01",
+      "confirmation": "expert_confirmed_same_form",
+      "meanings": [
+        {
+          "gloss": "FRIEND",
+          "concept": "FRIEND",
+          "english": "friend",
+          "sinhala": "මිතුරා",
+          "semantic_type": "PERSON"
+        },
+        {
+          "gloss": "FRIDAY",
+          "concept": "FRIDAY",
+          "english": "Friday",
+          "sinhala": "සිකුරාදා",
+          "semantic_type": "WEEKDAY"
+        },
+        {
+          "gloss": "FEBRUARY",
+          "concept": "FEBRUARY",
+          "english": "February",
+          "sinhala": "පෙබරවාරි",
+          "semantic_type": "MONTH"
+        }
+      ]
+    }
+  ]
+}

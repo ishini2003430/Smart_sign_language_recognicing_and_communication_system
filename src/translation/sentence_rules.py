@@ -92,3 +92,10 @@ def reconstruct_sentence(signs, lexicon):
             "pattern": "SUBJECT_OBJECT_ACTION"
         }
 
+            # No supported grammatical pattern matched
+    return {
+        "english": None,
+        "sinhala": None,
+        "pattern": "UNKNOWN"
+    }
+

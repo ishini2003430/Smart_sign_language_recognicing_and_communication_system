@@ -64,5 +64,43 @@
   "category": "ACTION",
   "grammar_role": "ACTION",
   "allowed_objects": ["WATER"]
-}
+  },
+  "FRIEND": {
+    "concept": "FRIEND",
+    "english": "friend",
+    "sinhala": "මිතුරා",
+    "category": "PERSON",
+    "grammar_role": "PERSON"
+  },
+  "FRIDAY": {
+    "concept": "FRIDAY",
+    "english": "Friday",
+    "sinhala": "සිකුරාදා",
+    "category": "TIME",
+    "grammar_role": "TIME",
+    "semantic_type": "WEEKDAY"
+  },
+  "FEBRUARY": {
+    "concept": "FEBRUARY",
+    "english": "February",
+    "sinhala": "පෙබරවාරි",
+    "category": "TIME",
+    "grammar_role": "TIME",
+    "semantic_type": "MONTH"
+  },
+  "MONTH": {
+    "concept": "MONTH",
+    "english": "month",
+    "sinhala": "මාසය",
+    "category": "TIME",
+    "grammar_role": "TIME_UNIT"
+  },
+  "WANT": {
+    "concept": "WANT",
+    "english": "want",
+    "sinhala": "ඕනේ",
+    "category": "ACTION",
+    "grammar_role": "ACTION",
+    "allowed_objects": ["WATER", "FOOD"]
+  }
 }
