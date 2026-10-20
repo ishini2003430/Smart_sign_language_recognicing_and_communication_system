@@ -102,5 +102,21 @@
     "category": "ACTION",
     "grammar_role": "ACTION",
     "allowed_objects": ["WATER", "FOOD"]
+  },
+  
+  "ME": {
+    "concept": "SELF",
+    "english": "me",
+    "sinhala": "මාව",
+    "category": "PRONOUN",
+    "grammar_role": "OBJECT_PRONOUN"
+  },
+  "MINE": {
+    "concept": "POSSESSION",
+    "english": "mine",
+    "sinhala": "මගේ",
+    "category": "PRONOUN",
+    "grammar_role": "POSSESSIVE_PRONOUN"
   }
+
 }
