@@ -117,6 +117,13 @@
     "sinhala": "මගේ",
     "category": "PRONOUN",
     "grammar_role": "POSSESSIVE_PRONOUN"
+  },
+  "COME": {
+    "concept": "COME",
+    "english": "come",
+    "sinhala": "එනවා",
+    "category": "ACTION",
+    "grammar_role": "ACTION"
   }
 
 }
