@@ -28,6 +28,111 @@
           "semantic_type": "MONTH"
         }
       ]
+    },
+    {
+      "group_id": "G02",
+      "form_id": "SIGN_FORM_G02",
+      "confirmation": "provisional_confusable_group",
+      "meanings": [
+        {
+          "gloss": "COLOMBO",
+          "concept": "COLOMBO",
+          "english": "Colombo",
+          "sinhala": "කොළඹ",
+          "semantic_type": "LOCATION"
+        },
+        {
+          "gloss": "LOOK",
+          "concept": "LOOK",
+          "english": "look",
+          "sinhala": "බලනවා",
+          "semantic_type": "ACTION"
+        },
+        {
+          "gloss": "SEE",
+          "concept": "SEE",
+          "english": "see",
+          "sinhala": "දකිනවා",
+          "semantic_type": "ACTION"
+        },
+        {
+          "gloss": "CANCER",
+          "concept": "CANCER",
+          "english": "cancer",
+          "sinhala": "පිළිකාව",
+          "semantic_type": "HEALTH_CONCEPT"
+        }
+      ]
+    },
+    {
+      "group_id": "G03",
+      "form_id": "SIGN_FORM_G03",
+      "confirmation": "provisional_confusable_group",
+      "meanings": [
+        {
+          "gloss": "MINE",
+          "concept": "POSSESSION",
+          "english": "mine",
+          "sinhala": "මගේ",
+          "semantic_type": "POSSESSIVE_PRONOUN"
+        },
+        {
+          "gloss": "ME",
+          "concept": "SELF",
+          "english": "me",
+          "sinhala": "මාව",
+          "semantic_type": "OBJECT_PRONOUN"
+        },
+        {
+          "gloss": "I",
+          "concept": "SELF",
+          "english": "I",
+          "sinhala": "මම",
+          "semantic_type": "SUBJECT_PRONOUN"
+        }
+      ]
+    },
+    {
+      "group_id": "G04",
+      "form_id": "SIGN_FORM_G04",
+      "confirmation": "provisional_confusable_group",
+      "meanings": [
+        {
+          "gloss": "KNOW",
+          "concept": "KNOW",
+          "english": "know",
+          "sinhala": "දන්නවා",
+          "semantic_type": "COGNITIVE_ACTION"
+        },
+        {
+          "gloss": "THINK",
+          "concept": "THINK",
+          "english": "think",
+          "sinhala": "හිතනවා",
+          "semantic_type": "COGNITIVE_ACTION"
+        }
+      ]
+    },
+    {
+      "group_id": "G05",
+      "form_id": "SIGN_FORM_G05",
+      "confirmation": "provisional_confusable_group",
+      "meanings": [
+        {
+          "gloss": "HOW",
+          "concept": "HOW",
+          "english": "how",
+          "sinhala": "කොහොමද",
+          "semantic_type": "MANNER_QUESTION"
+        },
+        {
+          "gloss": "WHY",
+          "concept": "WHY",
+          "english": "why",
+          "sinhala": "ඇයි",
+          "semantic_type": "REASON_QUESTION"
+        }
+      ]
     }
   ]
 }

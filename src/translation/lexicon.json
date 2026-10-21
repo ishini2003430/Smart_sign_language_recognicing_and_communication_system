@@ -132,6 +132,105 @@
     "category": "ACTION",
     "grammar_role": "ACTION",
     "allowed_objects": ["FRIEND"]
-  }
+  },
+  "MOTHER": {
+    "concept": "MOTHER",
+    "english": "mother",
+    "sinhala": "අම්මා",
+    "category": "PERSON",
+    "grammar_role": "PERSON"
+},
+  "FATHER": {
+    "concept": "FATHER",
+    "english": "father",
+    "sinhala": "තාත්තා",
+    "category": "PERSON",
+    "grammar_role": "PERSON"
+},
+  "DAUGHTER": {
+    "concept": "DAUGHTER",
+    "english": "daughter",
+    "sinhala": "දුව",
+    "category": "PERSON",
+    "grammar_role": "PERSON"
+},
+  "SON": {
+    "concept": "SON",
+    "english": "son",
+    "sinhala": "පුතා",
+    "category": "PERSON",
+    "grammar_role": "PERSON"
+},
+  "BROTHER": {
+    "concept": "BROTHER",
+    "english": "brother",
+    "sinhala": "සහෝදරයා",
+    "category": "PERSON",
+    "grammar_role": "PERSON"
+},
+  "SISTER": {
+    "concept": "SISTER",
+    "english": "sister",
+    "sinhala": "සහෝදරිය",
+    "category": "PERSON",
+    "grammar_role": "PERSON"
+},
+  "WELCOME": {
+    "concept": "WELCOME",
+    "english": "welcome",
+    "sinhala": "සාදරයෙන් පිළිගන්නවා",
+    "category": "EXPRESSION",
+    "grammar_role": "EXPRESSION"
+},
+  "COLOMBO": {
+    "concept": "COLOMBO",
+    "english": "Colombo",
+    "sinhala": "කොළඹ",
+    "category": "PLACE",
+    "grammar_role": "LOCATION"
+},
+  "LOOK": {
+    "concept": "LOOK",
+    "english": "look",
+    "sinhala": "බලනවා",
+    "category": "ACTION",
+    "grammar_role": "ACTION"
+},
+  "CANCER": {
+    "concept": "CANCER",
+    "english": "cancer",
+    "sinhala": "පිළිකාව",
+    "category": "HEALTH",
+    "grammar_role": "OBJECT"
+},
+  "KNOW": {
+    "concept": "KNOW",
+    "english": "know",
+    "sinhala": "දන්නවා",
+    "category": "ACTION",
+    "grammar_role": "ACTION"
+},
+  "THINK": {
+    "concept": "THINK",
+    "english": "think",
+    "sinhala": "හිතනවා",
+    "category": "ACTION",
+    "grammar_role": "ACTION"
+},
+  "HOW": {
+    "concept": "HOW",
+    "english": "how",
+    "sinhala": "කොහොමද",
+    "category": "QUESTION",
+    "grammar_role": "QUESTION_WORD"
+},
+  "WHY": {
+    "concept": "WHY",
+    "english": "why",
+    "sinhala": "ඇයි",
+    "category": "QUESTION",
+    "grammar_role": "QUESTION_WORD"
+}
+
 
 }

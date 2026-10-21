@@ -17,6 +17,200 @@ def reconstruct_sentence(signs, lexicon):
 
     signs = [sign.strip().upper() for sign in signs]
 
+    
+    # Pattern: Question using WHY or HOW
+    #
+    # Examples:
+    # YOU WATER WANT WHY
+    # YOU SCHOOL GO WHY
+    # YOU HOME COME HOW
+    # I SCHOOL GO WHY
+    #
+    # The question word is the final gloss.
+    # The remaining three glosses use existing grammar rules.
+
+    if len(signs) == 4 and signs[-1] in {"WHY", "HOW"}:
+
+        question_gloss = signs[-1]
+        base_signs = signs[:3]
+
+        if base_signs[0] not in {"I", "YOU"}:
+            return unknown_result()
+
+        base_result = reconstruct_sentence(base_signs, lexicon)
+
+        if base_result["pattern"] == "UNKNOWN":
+            return unknown_result()
+
+        subject_gloss = base_signs[0]
+
+        english_subject = (
+            "I" if subject_gloss == "I" else "you"
+        )
+
+        english_auxiliary = (
+            "am" if subject_gloss == "I" else "are"
+        )
+
+        english_base = base_result["english"].rstrip(".")
+        sinhala_base = base_result["sinhala"].rstrip(".")
+
+        # WHY + WANT:
+        # "You want water." -> "Why do you want water?"
+        if (
+            question_gloss == "WHY"
+            and base_result["pattern"] == "SUBJECT_OBJECT_WANT"
+        ):
+            subject_word = (
+                "I" if subject_gloss == "I" else "You"
+            )
+
+            prefix = f"{subject_word} want "
+
+            if not english_base.startswith(prefix):
+                return unknown_result()
+
+            english_object = english_base[len(prefix):]
+
+            return {
+                "english": (
+                    f"Why do {english_subject} "
+                    f"want {english_object}?"
+                ),
+                "sinhala": f"{sinhala_base} ඇයි?",
+                "pattern": "QUESTION_WHY_WANT"
+            }
+
+        # WHY / HOW + GO / COME
+        if base_result["pattern"] == "SUBJECT_LOCATION_ACTION":
+
+            subject_word = (
+                "I" if subject_gloss == "I" else "You"
+            )
+
+            prefix = (
+                f"{subject_word} {english_auxiliary} "
+            )
+
+            if not english_base.startswith(prefix):
+                return unknown_result()
+
+            verb_phrase = english_base[len(prefix):]
+
+            question_word = (
+                "Why" if question_gloss == "WHY" else "How"
+            )
+
+            sinhala_question = (
+                "ඇයි" if question_gloss == "WHY"
+                else "කොහොමද"
+            )
+
+            return {
+                "english": (
+                    f"{question_word} {english_auxiliary} "
+                    f"{english_subject} {verb_phrase}?"
+                ),
+                "sinhala": (
+                    f"{sinhala_base} {sinhala_question}?"
+                ),
+                "pattern": (
+                    f"QUESTION_{question_gloss}_MOVEMENT"
+                )
+            }
+
+        return unknown_result()
+
+
+    
+    # Pattern: Person + Location + GO / COME
+    #
+    # Examples:
+    # MOTHER HOME COME
+    # FATHER SCHOOL GO
+    # SISTER GO HOME
+    #
+    # Supports both action-location and location-action orders.
+
+    family_subjects = {
+        "MOTHER",
+        "FATHER",
+        "DAUGHTER",
+        "SON",
+        "BROTHER",
+        "SISTER",
+        "FRIEND"
+    }
+
+    if len(signs) == 3 and signs[0] in family_subjects:
+
+        subject_gloss = signs[0]
+
+        if subject_gloss not in lexicon:
+            return unknown_result()
+
+        subject = lexicon[subject_gloss]
+
+        # Identify the location and action.
+        if signs[1] in {"GO", "COME"}:
+            action_gloss = signs[1]
+            location_gloss = signs[2]
+        else:
+            location_gloss = signs[1]
+            action_gloss = signs[2]
+
+        if (
+            location_gloss in lexicon
+            and action_gloss in lexicon
+            and lexicon[location_gloss].get("grammar_role")
+                == "LOCATION"
+            and action_gloss in {"GO", "COME"}
+        ):
+
+            english_locations = {
+                "SCHOOL": "to school",
+                "HOME": "home",
+                "COLOMBO": "to Colombo"
+            }
+
+            sinhala_locations = {
+                "SCHOOL": "පාසලට",
+                "HOME": "ගෙදර",
+                "COLOMBO": "කොළඹට"
+            }
+
+            if location_gloss not in english_locations:
+                return unknown_result()
+
+            english_subject = subject["english"].capitalize()
+            sinhala_subject = subject["sinhala"]
+
+            english_verb = (
+                "is going"
+                if action_gloss == "GO"
+                else "is coming"
+            )
+
+            sinhala_verb = (
+                "යනවා"
+                if action_gloss == "GO"
+                else "එනවා"
+            )
+
+            return {
+                "english": (
+                    f"{english_subject} {english_verb} "
+                    f"{english_locations[location_gloss]}."
+                ),
+                "sinhala": (
+                    f"{sinhala_subject} "
+                    f"{sinhala_locations[location_gloss]} "
+                    f"{sinhala_verb}."
+                ),
+                "pattern": "PERSON_LOCATION_ACTION"
+            }
+
+
         # Handle a four-gloss sentence with an explicit time expression.
     if len(signs) == 4:
         time_gloss = signs[-1]
@@ -115,6 +309,59 @@ def reconstruct_sentence(signs, lexicon):
 
     english_subject = "I" if subject_gloss == "I" else "You"
     sinhala_subject = subject["sinhala"]
+
+    
+    # Pattern: Subject + Person + SEE / KNOW
+    #
+    # Supported word orders:
+    # I FATHER SEE
+    # I SEE FATHER
+    #
+    # Applies to all registered person concepts.
+
+    if (
+        middle.get("category") == "PERSON"
+        and action_gloss in {"SEE", "KNOW"}
+    ):
+        sinhala_person_objects = {
+            "MOTHER": "අම්මාව",
+            "FATHER": "තාත්තාව",
+            "DAUGHTER": "දුවව",
+            "SON": "පුතාව",
+            "BROTHER": "සහෝදරයාව",
+            "SISTER": "සහෝදරියව",
+            "FRIEND": "මිතුරාව"
+        }
+
+        sinhala_object = sinhala_person_objects.get(
+            middle_gloss
+        )
+
+        if sinhala_object is None:
+            return unknown_result()
+
+        english_action = {
+            "SEE": "see",
+            "KNOW": "know"
+        }[action_gloss]
+
+        sinhala_action = {
+            "SEE": "දකිනවා",
+            "KNOW": "දන්නවා"
+        }[action_gloss]
+
+        return {
+            "english": (
+                f"{english_subject} {english_action} "
+                f"a {middle['english']}."
+            ),
+            "sinhala": (
+                f"{sinhala_subject} "
+                f"{sinhala_object} {sinhala_action}."
+            ),
+            "pattern": "SUBJECT_PERSON_COGNITIVE_ACTION"
+        }
+
 
     # Pattern 1: Subject + Location + GO / COME
 
