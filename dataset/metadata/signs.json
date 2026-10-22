@@ -1,0 +1,356 @@
+{
+  "schema_version": "1.0",
+  "description": "SLSL sign metadata for the sign animation component. All entries with 'video_exists_placeholder': true require expert-recorded MP4 files to be added to assets/sign_videos/ before they can be played. Labels and sign IDs must be confirmed with an SLSL expert before the vocabulary is finalised.",
+  "status": "partially_ready",
+  "notes": [
+    "No video files are fabricated. Each entry lists the EXPECTED filename derived from the vocabulary_draft.json concepts.",
+    "When a real expert video is received, place it at the path listed in 'video_path' and set 'video_ready': true.",
+    "Do not add signs that have not been validated by an SLSL expert.",
+    "Multiple experts may contribute variants of the same sign (e.g. S001a, S001b)."
+  ],
+  "signs": [
+    {
+      "sign_id": "S001",
+      "label": "i",
+      "sinhala_label": "මම",
+      "video_path": "expert_reference/expert_reference/expert_03/expert_03/S16_I.mp4",
+      "expert": "expert_03",
+      "language": "SLSL",
+      "aliases": [
+        "me",
+        "myself"
+      ],
+      "variants": [],
+      "context_tags": [
+        "pronoun",
+        "first_person"
+      ],
+      "video_ready": true
+    },
+    {
+      "sign_id": "S002",
+      "label": "you",
+      "sinhala_label": "ඔබ",
+      "video_path": "expert_reference/expert_reference/expert_03/expert_03/S17_You.mp4",
+      "expert": "expert_03",
+      "language": "SLSL",
+      "aliases": [
+        "oya"
+      ],
+      "variants": [],
+      "context_tags": [
+        "pronoun",
+        "second_person"
+      ],
+      "video_ready": true
+    },
+    {
+      "sign_id": "S003",
+      "label": "mother",
+      "sinhala_label": "අම්මා",
+      "video_path": "expert_reference/expert_reference/expert_03/expert_03/S01_amma.mp4",
+      "expert": "expert_03",
+      "language": "SLSL",
+      "aliases": [
+        "mom",
+        "amma"
+      ],
+      "variants": [],
+      "context_tags": [
+        "family"
+      ],
+      "video_ready": true
+    },
+    {
+      "sign_id": "S004",
+      "label": "father",
+      "sinhala_label": "තාත්තා",
+      "video_path": "expert_reference/expert_reference/expert_03/expert_03/S02_father.mp4",
+      "expert": "expert_03",
+      "language": "SLSL",
+      "aliases": [
+        "dad",
+        "thaththaa"
+      ],
+      "variants": [],
+      "context_tags": [
+        "family"
+      ],
+      "video_ready": true
+    },
+    {
+      "sign_id": "S005",
+      "label": "child",
+      "sinhala_label": "දරුවා",
+      "video_path": "assets/sign_videos/S005_child.mp4",
+      "expert": "pending",
+      "language": "SLSL",
+      "aliases": [
+        "kid",
+        "daruwa"
+      ],
+      "variants": [],
+      "context_tags": [
+        "family"
+      ],
+      "video_ready": false
+    },
+    {
+      "sign_id": "S006",
+      "label": "doctor",
+      "sinhala_label": "වෛද්‍යවරයා",
+      "video_path": "assets/sign_videos/S006_doctor.mp4",
+      "expert": "pending",
+      "language": "SLSL",
+      "aliases": [
+        "vaidya"
+      ],
+      "variants": [],
+      "context_tags": [
+        "health",
+        "occupation"
+      ],
+      "video_ready": false
+    },
+    {
+      "sign_id": "S007",
+      "label": "hospital",
+      "sinhala_label": "රෝහල",
+      "video_path": "assets/sign_videos/S007_hospital.mp4",
+      "expert": "pending",
+      "language": "SLSL",
+      "aliases": [
+        "rohala"
+      ],
+      "variants": [],
+      "context_tags": [
+        "health",
+        "place"
+      ],
+      "video_ready": false
+    },
+    {
+      "sign_id": "S008",
+      "label": "home",
+      "sinhala_label": "ගෙදර",
+      "video_path": "expert_reference/expert_reference/expert_03/expert_03/S12_home.mp4",
+      "expert": "expert_03",
+      "language": "SLSL",
+      "aliases": [
+        "house",
+        "gedera"
+      ],
+      "variants": [],
+      "context_tags": [
+        "place"
+      ],
+      "video_ready": true
+    },
+    {
+      "sign_id": "S009",
+      "label": "school",
+      "sinhala_label": "පාසල",
+      "video_path": "expert_reference/expert_reference/expert_03/expert_03/S07_school.mp4",
+      "expert": "expert_03",
+      "language": "SLSL",
+      "aliases": [
+        "pasala"
+      ],
+      "variants": [],
+      "context_tags": [
+        "place",
+        "education"
+      ],
+      "video_ready": true
+    },
+    {
+      "sign_id": "S010",
+      "label": "water",
+      "sinhala_label": "වතුර",
+      "video_path": "expert_reference/expert_reference/expert_03/expert_03/S19_water.mp4",
+      "expert": "expert_03",
+      "language": "SLSL",
+      "aliases": [
+        "wattura"
+      ],
+      "variants": [],
+      "context_tags": [
+        "basic_need"
+      ],
+      "video_ready": true
+    },
+    {
+      "sign_id": "S011",
+      "label": "food",
+      "sinhala_label": "ආහාර",
+      "video_path": "assets/sign_videos/S011_food.mp4",
+      "expert": "pending",
+      "language": "SLSL",
+      "aliases": [
+        "ahara",
+        "eat"
+      ],
+      "variants": [],
+      "context_tags": [
+        "basic_need"
+      ],
+      "video_ready": false
+    },
+    {
+      "sign_id": "S012",
+      "label": "medicine",
+      "sinhala_label": "බෙහෙත්",
+      "video_path": "assets/sign_videos/S012_medicine.mp4",
+      "expert": "pending",
+      "language": "SLSL",
+      "aliases": [
+        "behet",
+        "drug"
+      ],
+      "variants": [],
+      "context_tags": [
+        "health"
+      ],
+      "video_ready": false
+    },
+    {
+      "sign_id": "S013",
+      "label": "eat",
+      "sinhala_label": "කන්න",
+      "video_path": "expert_reference/expert_reference/expert_03/expert_03/S15_eat.mp4",
+      "expert": "expert_03",
+      "language": "SLSL",
+      "aliases": [
+        "kanna",
+        "eating"
+      ],
+      "variants": [],
+      "context_tags": [
+        "action"
+      ],
+      "video_ready": true
+    },
+    {
+      "sign_id": "S014",
+      "label": "drink",
+      "sinhala_label": "බොන්න",
+      "video_path": "expert_reference/expert_reference/expert_03/expert_03/S27_drink.mp4",
+      "expert": "expert_03",
+      "language": "SLSL",
+      "aliases": [
+        "bonna",
+        "drinking"
+      ],
+      "variants": [],
+      "context_tags": [
+        "action"
+      ],
+      "video_ready": true
+    },
+    {
+      "sign_id": "S015",
+      "label": "go",
+      "sinhala_label": "යන්න",
+      "video_path": "expert_reference/expert_reference/expert_03/expert_03/S04_go.mp4",
+      "expert": "expert_03",
+      "language": "SLSL",
+      "aliases": [
+        "yanna",
+        "going"
+      ],
+      "variants": [],
+      "context_tags": [
+        "action",
+        "movement"
+      ],
+      "video_ready": true
+    },
+    {
+      "sign_id": "S016",
+      "label": "come",
+      "sinhala_label": "එන්න",
+      "video_path": "expert_reference/expert_reference/expert_03/expert_03/S05_come.mp4",
+      "expert": "expert_03",
+      "language": "SLSL",
+      "aliases": [
+        "enna",
+        "coming"
+      ],
+      "variants": [],
+      "context_tags": [
+        "action",
+        "movement"
+      ],
+      "video_ready": true
+    },
+    {
+      "sign_id": "S017",
+      "label": "want",
+      "sinhala_label": "ඕනෑ",
+      "video_path": "expert_reference/expert_reference/expert_03/expert_03/S18_want.mp4",
+      "expert": "expert_03",
+      "language": "SLSL",
+      "aliases": [
+        "need",
+        "ona",
+        "awashyai"
+      ],
+      "variants": [],
+      "context_tags": [
+        "expression"
+      ],
+      "video_ready": true
+    },
+    {
+      "sign_id": "S018",
+      "label": "pain",
+      "sinhala_label": "රිදෙනවා",
+      "video_path": "assets/sign_videos/S018_pain.mp4",
+      "expert": "pending",
+      "language": "SLSL",
+      "aliases": [
+        "hurt",
+        "ridenawa",
+        "vedanawa"
+      ],
+      "variants": [],
+      "context_tags": [
+        "health",
+        "expression"
+      ],
+      "video_ready": false
+    },
+    {
+      "sign_id": "S019",
+      "label": "today",
+      "sinhala_label": "අද",
+      "video_path": "assets/sign_videos/S019_today.mp4",
+      "expert": "pending",
+      "language": "SLSL",
+      "aliases": [
+        "ada"
+      ],
+      "variants": [],
+      "context_tags": [
+        "time"
+      ],
+      "video_ready": false
+    },
+    {
+      "sign_id": "S020",
+      "label": "tomorrow",
+      "sinhala_label": "හෙට",
+      "video_path": "assets/sign_videos/S020_tomorrow.mp4",
+      "expert": "pending",
+      "language": "SLSL",
+      "aliases": [
+        "heta"
+      ],
+      "variants": [],
+      "context_tags": [
+        "time"
+      ],
+      "video_ready": false
+    }
+  ]
+}
