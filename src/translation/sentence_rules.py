@@ -105,6 +105,23 @@ def reconstruct_sentence(signs, lexicon):
                 "ඇයි" if question_gloss == "WHY"
                 else "කොහොමද"
             )
+            
+            # Convert Sinhala statement verbs into
+            # more natural question constructions.
+            #
+            # යනවා -> යන්නේ
+            # එනවා -> එන්නේ
+
+            if sinhala_base.endswith("යනවා"):
+                sinhala_base = (
+                    sinhala_base[:-len("යනවා")] + "යන්නේ"
+                )
+
+            elif sinhala_base.endswith("එනවා"):
+                sinhala_base = (
+                    sinhala_base[:-len("එනවා")] + "එන්නේ"
+                )
+
 
             return {
                 "english": (

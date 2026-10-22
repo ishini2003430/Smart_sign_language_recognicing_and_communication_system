@@ -15,6 +15,7 @@ class TestQuestionGrammar(unittest.TestCase):
             result["english"],
             "Why do you want water?"
         )
+
         self.assertEqual(
             result["sinhala"],
             "ඔයාට වතුර ඕනේ ඇයි?"
@@ -30,6 +31,11 @@ class TestQuestionGrammar(unittest.TestCase):
             "Why are you going to school?"
         )
 
+        self.assertEqual(
+            result["sinhala"],
+            "ඔයා පාසලට යන්නේ ඇයි?"
+        )
+
     def test_how_come_home(self):
         result = translate_signs(
             ["YOU", "HOME", "COME", "HOW"]
@@ -40,6 +46,11 @@ class TestQuestionGrammar(unittest.TestCase):
             "How are you coming home?"
         )
 
+        self.assertEqual(
+            result["sinhala"],
+            "ඔයා ගෙදර එන්නේ කොහොමද?"
+        )
+
     def test_why_am_i_going(self):
         result = translate_signs(
             ["I", "SCHOOL", "GO", "WHY"]
@@ -48,6 +59,11 @@ class TestQuestionGrammar(unittest.TestCase):
         self.assertEqual(
             result["english"],
             "Why am I going to school?"
+        )
+
+        self.assertEqual(
+            result["sinhala"],
+            "මම පාසලට යන්නේ ඇයි?"
         )
 
     def test_unsupported_question(self):

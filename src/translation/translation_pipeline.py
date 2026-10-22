@@ -242,7 +242,20 @@ def translate_topk_sequence(sequence):
                 **result
             })
 
+            
             if result["status"] != "RESOLVED":
+
+                # Try complete-sentence grammar evaluation
+                # when the local contextual selector cannot
+                # identify a unique candidate.
+
+                full_result = evaluate_full_sequences(sequence)
+
+                if full_result["status"] == "SUCCESS":
+                    return full_result
+
+                # Keep the existing ambiguity behavior
+                # if sentence-level context is insufficient.
                 return {
                     "status": "AMBIGUOUS",
                     "selected_glosses": None,
@@ -251,10 +264,14 @@ def translate_topk_sequence(sequence):
                     "sinhala": None,
                     "pattern": None,
                     "reason": (
-                        "At least one sign could not be "
-                        "resolved using the available context."
+                        "Neither the local contextual rules "
+                        "nor complete-sentence grammar "
+                        "evaluation identified a unique "
+                        "supported interpretation."
                     )
                 }
+
+
 
             selected = result["selected"]
 
