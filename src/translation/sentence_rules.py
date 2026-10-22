@@ -379,6 +379,49 @@ def reconstruct_sentence(signs, lexicon):
             "pattern": "SUBJECT_PERSON_COGNITIVE_ACTION"
         }
 
+    
+    # Pattern: Subject + LOOK + Location
+    #
+    # Supports:
+    # I LOOK SCHOOL
+    # YOU HOME LOOK
+    # I LOOK COLOMBO
+
+    if middle_role == "LOCATION" and action_gloss == "LOOK":
+
+        location_forms = {
+            "SCHOOL": {
+                "english": "the school",
+                "sinhala": "පාසල"
+            },
+            "HOME": {
+                "english": "the home",
+                "sinhala": "ගෙදර"
+            },
+            "COLOMBO": {
+                "english": "Colombo",
+                "sinhala": "කොළඹ"
+            }
+        }
+
+        if middle_gloss not in location_forms:
+            return unknown_result()
+
+        location = location_forms[middle_gloss]
+
+        return {
+            "english": (
+                f"{english_subject} look at "
+                f"{location['english']}."
+            ),
+            "sinhala": (
+                f"{sinhala_subject} "
+                f"{location['sinhala']} දිහා බලනවා."
+            ),
+            "pattern": "SUBJECT_LOOK_LOCATION"
+        }
+
+
 
     # Pattern 1: Subject + Location + GO / COME
 
@@ -391,6 +434,10 @@ def reconstruct_sentence(signs, lexicon):
         elif middle_gloss == "HOME":
             english_location = "home"
             sinhala_location = "ගෙදර"
+
+        elif middle_gloss == "COLOMBO":
+            english_location = "to Colombo"
+            sinhala_location = "කොළඹට"
         else:
             return unknown_result()
 
